@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Hosting;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 
 namespace BlazorTemplate.Maui.WinUI
 {
@@ -19,12 +17,5 @@ namespace BlazorTemplate.Maui.WinUI
         }
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
-
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
-        {
-            base.OnLaunched(args);
-
-            Microsoft.Maui.Essentials.Platform.OnLaunched(args);
-        }
     }
 }
