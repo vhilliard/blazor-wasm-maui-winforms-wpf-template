@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using BlazorTemplate.Data;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 namespace BlazorTemplate.WebView.Wpf
@@ -12,6 +13,9 @@ namespace BlazorTemplate.WebView.Wpf
 		{
 			var services = new ServiceCollection();
 			services.AddWpfBlazorWebView();
+
+			services.AddSingleton<WeatherForecastService>();
+
 			Resources.Add("services", services.BuildServiceProvider());
 
 			InitializeComponent();

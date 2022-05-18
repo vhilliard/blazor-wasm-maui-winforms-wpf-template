@@ -1,4 +1,6 @@
-﻿namespace BlazorTemplate.Maui
+﻿using BlazorTemplate.Data;
+
+namespace BlazorTemplate.Maui
 {
     public static class MauiProgram
     {
@@ -13,6 +15,11 @@
                 });
 
             builder.Services.AddMauiBlazorWebView();
+#if DEBUG
+            builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
+
+            builder.Services.AddSingleton<WeatherForecastService>();
 
             return builder.Build();
         }
