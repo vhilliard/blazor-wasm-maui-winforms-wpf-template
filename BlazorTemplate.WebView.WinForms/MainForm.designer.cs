@@ -48,7 +48,7 @@ namespace BlazorTemplate.WebView.WinForms
             this.Controls.Add(this.blazorWebView);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "MainForm";
-            this.Text = "BlazorTemplate!";
+            this.Text = "Blazor Template";
             this.ResumeLayout(false);
             this.PerformLayout();
 

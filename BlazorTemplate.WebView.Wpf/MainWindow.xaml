@@ -6,7 +6,7 @@
         xmlns:BlazorTemplate="clr-namespace:BlazorTemplate;assembly=BlazorTemplate"
         xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
         mc:Ignorable="d"
-        Title="BlazorTemplate!" Height="450" Width="800">
+        Title="Blazor Template" Height="450" Width="800">
     
     <blazor:BlazorWebView HostPage="wwwroot\index.html" Services="{StaticResource services}" x:Name="blazorWebView">
         <blazor:BlazorWebView.RootComponents>
