@@ -1,22 +1,27 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
+﻿using BlazorTemplate.Data;
 
 namespace BlazorTemplate.Maui
 {
     public static class MauiProgram
-	{
-		public static MauiApp CreateMauiApp()
-		{
-			var builder = MauiApp.CreateBuilder();
-			builder
-				.RegisterBlazorMauiWebView()
-				.UseMauiApp<App>();
+    {
+        public static MauiApp CreateMauiApp ()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
 
-			builder.Services.AddBlazorWebView();
+            builder.Services.AddMauiBlazorWebView();
+#if DEBUG
+            builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
 
-			return builder.Build();
-		}
-	}
+            builder.Services.AddSingleton<WeatherForecastService>();
+
+            return builder.Build();
+        }
+    }
 }

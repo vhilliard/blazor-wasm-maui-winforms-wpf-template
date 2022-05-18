@@ -1,6 +1,4 @@
-﻿using Application = Microsoft.Maui.Controls.Application;
-
-namespace BlazorTemplate.Maui
+﻿namespace BlazorTemplate.Maui
 {
     public partial class App : Application
 	{
